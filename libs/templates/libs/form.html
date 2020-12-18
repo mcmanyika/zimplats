@@ -1,0 +1,16 @@
+{% extends 'libs/base.html' %}
+{% load static %} {% load crispy_forms_tags %}
+{% block content %}
+      <form method="post" name="form" enctype="multipart/form-data">
+        {% csrf_token %} 
+        {{form.location|as_crispy_field}}
+        {{form.what_you_saw|as_crispy_field}}
+        {{form.reasons|as_crispy_field}}
+        {{form.behavior|as_crispy_field}}
+        {{form.possible_results|as_crispy_field}}
+        {{form.what_you_did|as_crispy_field}}
+        <input type="hidden" name="rootid" value="{{ request.user.id }}">
+        <input type="hidden" name="user" value="{{ request.user.id }}">
+        <input type="submit" class="btn btn-lg btn-success" value="Submit" />
+      </form>
+{% endblock %}   
