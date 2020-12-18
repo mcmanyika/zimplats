@@ -37,7 +37,7 @@ INSTALLED_APPS = [
 
     'libs',
     'crispy_forms',
-    'multiselectfield',
+    'multiselectfield', 
 ]
 
 SITE_ID = 1
